@@ -1,13 +1,8 @@
 import express from 'express';
 import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
 
 import colors from 'colors';
 import ApiRouter from 'hajser-host';
-
-mongoose.connect('mongodb://localhost/hajser', function () {
-    console.log('Connected with mongo database'.green);
-});
 
 var app = express();
 var port = process.env.PORT || 4200;

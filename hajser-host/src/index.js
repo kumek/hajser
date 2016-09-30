@@ -1,5 +1,11 @@
 import express from 'express';
 
+import mongoose from 'mongoose';
+
+mongoose.connect('mongodb://localhost/hajser', function () {
+    console.log('Connected with mongo database'.green);
+});
+
 var ApiRouter = express.Router();
 
 ApiRouter.get('/', (req, res) => {
