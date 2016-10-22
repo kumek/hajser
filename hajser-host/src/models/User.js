@@ -14,6 +14,10 @@ class User {
     static findByPayerID(payerID) {
         return this.find({payerID}).exec();
     }
+    
+    static createUser(newUser, callback) {
+	    newUser.save(callback);
+}
 }
 
 userSchema.plugin(loadClass, User);

@@ -17,6 +17,10 @@ class Payment {
     static findByCreatorId(creatorId) {
         return this.find({creatorId}).exec();
     }
+    
+    static createPayment(newPayment, callback) {
+	    newPayment.save(callback);
+}
 }
 
 paymentSchema.plugin(loadClass, Payment);

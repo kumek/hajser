@@ -12,13 +12,13 @@ var transactionSchema = new mongoose.Schema({
 });
 
 class Transaction {
-    static findById(id) {
-        return this.findOne({id}).exec();
-    }
-
     static findByPayerID(payerID) {
         return this.find({payerID}).exec();
     }
+    
+    static createTransaction(newTransaction, callback) {
+	    newTransaction.save(callback);
+}
 }
 
 transactionSchema.plugin(loadClass, Transaction);
