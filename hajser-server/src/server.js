@@ -9,7 +9,7 @@ var port = process.env.PORT || 4200;
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
-
+app.use('/app', express.static('../hajser-client/dist'));
 app.use('/api', ApiRouter);
 app.use('/', (req, res) => {
     res.send('Use /api URL');

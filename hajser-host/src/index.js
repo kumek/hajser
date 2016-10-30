@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 
 import Transaction from './models/Transaction.js';
 import Payment from './models/Payment.js';
-import User from './models/Users.js';
+import User from './models/User.js';
 
 mongoose.connect('mongodb://localhost/hajser', function() {
     console.log('Connected with mongo database'.green);
@@ -35,7 +35,6 @@ ApiRouter.post('/transactions/', (req, res) => {
     Transaction.createTransaction(newTransaction, function(err, transaction) {
         if (err) console.log(err);
         res.status(200).send(newTransaction);
-
     });
 });
 
